@@ -1,3 +1,3 @@
 class SheridanSystem():
-    def __init__(self,):
-        pass
+    def __init__(self,noOfBuild):
+        self._nofBuildings = noOfBuild
