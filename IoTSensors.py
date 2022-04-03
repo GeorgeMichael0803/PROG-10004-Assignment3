@@ -1,10 +1,10 @@
 import random
 
-from Building import Building
+from Building import*
 from SheridanSystem import * 
 
 class Sensors:
-    def __init__(self, posX, posY, noDays, avgRead, co2Levels,avgCo2Levels,):
+    def __init__(self, posX, posY, noDays, avgRead, co2Levels,avgCo2Levels):
         self._posX= posX
         self._posY = posY
         self._noDays = noDays
@@ -37,19 +37,29 @@ class Sensors:
                 self._avgCo2Levels.append(sumOfCO2)
 
 
-class Co2Sensors(Sensors, Building, SheridanSystem):
+class Co2Sensors(Sensors, ):
     def __init__(self, posX, posY, noDays, avgRead,co2Levels,avgCo2Levels, coordinate ):
         super().__init__( posX, posY, noDays, avgRead, co2Levels,avgCo2Levels, coordinate)
-
+    
+ 
 
 
     def printInfo(self):
-        for value in (1, SheridanSystem.nofBuildingsReturn()):
-            print("This is for Building: " , self._buildName)
-            for range in (0, Building.sensorNoReturn()):
+        for value in (1, SheridanSystem.setNofBuildings()):
+            print("This is for Building: " , Building.setBuildName())
+            for range in (0, Building.setSensorNo()):
                 print("x:" , Sensors.sensorPos())
                 print("y:", Sensors.sensorPos())
                 for var in (0, self._noDays):
                     print("Day:", var+1 ,self._co2Levels[var] )
                 print("Average Reading(s):" , self._avgCo2Levels[range])       
-        
+            value+=1
+
+
+'''
+Building
+   def __init__(self,buildName="" ,noOfSensors=0, listOfSensors=[]):
+        super().__init__(buildName,noOfSensors,listOfSensors)
+
+
+'''

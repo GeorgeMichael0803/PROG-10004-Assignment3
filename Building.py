@@ -1,3 +1,5 @@
+from IoTSensors import*
+
 class Building:
     def __init__(self,buildName="" ,noOfSensors=0, listOfSensors=[]):
         self._noOfSensors = noOfSensors
@@ -24,18 +26,24 @@ class Building:
             print("Invalid Input, please type a positive number ")
             Building.sensorNo()
         else:
-            totalSensorNo=1
-            for counter in (totalSensorNo, self._noOfSensors+1):
-                pass   
+            pass
+        
+                  
 
 
-    def sensorNoReturn(self):
-        return int(self._noOfSensors )    
+    def setSensorNo(self):
+        return int(self._noOfSensors ) 
+
+
+    def setNoOfSensors(self):
+        return int(self._noOfSensors  +1)  
+
+    def setBuildName(self):
+        return self._buildName 
 
             
 
 
-hello1 = Building()
-hello1.buildingName()
+
 
         

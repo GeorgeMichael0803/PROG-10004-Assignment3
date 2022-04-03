@@ -1,11 +1,17 @@
-from Building import Building
-from SheridanSystem import SheridanSystem
+from Building import *
+from IoTSensors import * 
+from SheridanSystem import *
 
 
 class Application:
-    def start():
-        Building.buildingName()
+    def start(self):
         SheridanSystem.run()
+        Building.sensorNo()
+        for counter in (1,Building.setNoOfSensors() ):
+                print("Sensor ", counter) 
+                Sensors.sensorReading()
+        Co2Sensors.printInfo()
+        Application.continuation()
 
 
 
@@ -21,3 +27,7 @@ class Application:
         else: 
             print("Invalid input , Please try again")
             Application.continuation()             
+
+
+obj= Application()
+obj.start()

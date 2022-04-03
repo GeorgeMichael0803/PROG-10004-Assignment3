@@ -1,9 +1,8 @@
-from typing_extensions import Self
 from IoTSensors import*
 from Building import *
 
 
-class SheridanSystem():
+class SheridanSystem:
     def __init__(self,noOfBuild=0):
         self._nofBuildings = noOfBuild
 
@@ -22,13 +21,12 @@ class SheridanSystem():
                 SheridanSystem.invalidInput() 
             if (self._nofBuildings <1):
                 SheridanSystem.invalidInput()
-                 
-            else:
-                buildingNo= 1
-                while buildingNo <=  self._nofBuildings:
-                    Building.sensorNo()
+            else: 
+                for number in (1, self._nofBuildings + 1):
+                    print("Building " , number) 
+                    Building.buildingName()
 
-    def nofBuildingsReturn(self):
+    def setNofBuildings(self):
         return int( self._nofBuildings+1)
 
 
